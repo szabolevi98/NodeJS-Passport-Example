@@ -8,6 +8,10 @@ body {
   flex-direction: column;
 }
 
+footer {
+  font-size: 14px;
+}
+
 .maincontainer {
   border-top: 3px solid #4CAF50;
   border-bottom: 3px solid #4CAF50;
@@ -22,6 +26,7 @@ input[type=text], input[type=password], input[type=email], button {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  outline: none;
 }
 
 input[type=submit], button {
@@ -31,6 +36,7 @@ input[type=submit], button {
   border: none;
   cursor: pointer;
   width: 100%;
+  outline:none;
 }
 
 input[type=submit]:hover, button:hover {
@@ -58,7 +64,7 @@ footer {
   padding: 3px;
 }
 
-ul {
+header ul {
   list-style-type: none;
   margin: 0;
   margin-bottom: px;
@@ -67,11 +73,11 @@ ul {
   background-color: #333;
 }
 
-li {
+header li {
   float: left;
 }
 
-li a {
+header li a {
   display: block;
   color: white;
   text-align: center;
@@ -79,7 +85,7 @@ li a {
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
+header li a:hover:not(.active) {
   background-color: #111;
 }
 
