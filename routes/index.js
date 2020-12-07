@@ -1,22 +1,16 @@
 //Dependencies
 const router = require('express').Router();
+const check = require('./check');
 
-//Routes index
-router.get('/', checkAuthenticated, (req, res) => {
+//Route index
+router.get('/', check.checkAuthenticated, (req, res) => {
   res.render('index', { 
+    title: 'Felhasználó',
     name: req.user.name,
     email: req.user.email,
-    date: req.user.date,
+    date: req.user.date.toUTCString(),
     loggedIn: true
   });
 });
 
-function checkAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  else {
-    res.redirect('/login');
-  }
-};
 module.exports = router;

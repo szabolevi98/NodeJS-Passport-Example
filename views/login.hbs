@@ -1,4 +1,4 @@
-<h1>Bejelentkezés</h1>
+<h1>{{title}}</h1>
 {{#ifEquals messages.error "no_user" }}
 <p>A megadott email címmel nem található felhasználó!</p>
 {{/ifEquals}}
@@ -14,5 +14,8 @@
   </div>
 </form>
 {{#if success}}
-<script>window.onload = function() { alert('Regisztráció sikerült, jelentkezz be!'); }</script>
+<script>
+  window.onload = function() { alert('Regisztráció sikerült, jelentkezz be!'); }
+  window.history.pushState("", "", '/login');
+</script>
 {{/if}}

@@ -22,11 +22,16 @@ footer {
 .user {
   width: min-content;
   margin: auto;
+}
+
+.user td {
+  vertical-align: top;
   text-align: left;
+  padding: 4px 8px 4px 8px;
 }
 
 input[type=text], input[type=password], input[type=email], button {
-  width: 100%;
+  width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -36,12 +41,12 @@ input[type=text], input[type=password], input[type=email], button {
 }
 
 input[type=submit], button {
+  width: 90%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
   border: none;
   cursor: pointer;
-  width: 100%;
   outline:none;
 }
 

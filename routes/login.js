@@ -2,28 +2,21 @@
 const express = require('express');
 const router = express();
 const passport = require('passport');
+const check = require('./check');
 
 //Route login
 router.route('/')
-.get(checkNotAuthenticated, (req, res) => {
+.get(check.checkNotAuthenticated, (req, res) => {
   res.render('login', {
+    title: 'Bejelentkezés',
     atLogin: true
   });
 })
-.post(checkNotAuthenticated, passport.authenticate('local', {
+.post(check.checkNotAuthenticated, passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true
   })
 );
-
-function checkNotAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return res.redirect('/');
-  }
-  else {
-    next();
-  }
-};
 
 module.exports = router;
