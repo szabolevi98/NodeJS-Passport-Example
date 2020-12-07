@@ -8,71 +8,11 @@ body {
   flex-direction: column;
 }
 
-footer {
-  font-size: 14px;
-}
-
 .maincontainer {
   border-top: 3px solid #4CAF50;
   border-bottom: 3px solid #4CAF50;
   background-color: #f8f8f8;
   flex-grow: 1
-}
-
-.user {
-  width: min-content;
-  margin: auto;
-}
-
-.user td {
-  vertical-align: top;
-  text-align: left;
-  padding: 4px 8px 4px 8px;
-}
-
-input[type=text], input[type=password], input[type=email], button {
-  width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  outline: none;
-}
-
-input[type=submit], button {
-  width: 90%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  border: none;
-  cursor: pointer;
-  outline:none;
-}
-
-input[type=submit]:hover, button:hover {
-  opacity: 0.8;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 30%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 16px;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 3px;
 }
 
 header ul {
@@ -102,4 +42,61 @@ header li a:hover:not(.active) {
 
 .active {
   background-color: #4CAF50;
+}
+
+.container {
+  padding: 16px;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 30%;
+  border-radius: 50%;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 3px;
+  font-size: 14px;
+}
+
+.user {
+  width: min-content;
+  margin: auto;
+}
+
+.user td {
+  vertical-align: top;
+  text-align: left;
+  padding: 4px 8px 4px 8px;
+}
+
+input[type=text], input[type=password], input[type=email], button {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input[type=submit], button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  outline:none;
+}
+
+input[type=submit]:hover, button:hover {
+  opacity: 0.8;
 }
