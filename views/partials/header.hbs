@@ -1,0 +1,11 @@
+<ul>
+{{#if loggedIn}}
+  <li><a class="active" href="/">Felhasználó</a></li>
+  <li><a href="/logout">Kijelentkezés</a></li>
+{{else}}
+  <li><a{{#if atLogin}} class="active"{{/if}} href="/login">Bejelentkezés</a></li>
+  <li><a{{#if atRegister}} class="active"{{/if}} href="/register">Regisztráció</a></li>
+{{/if}}
+  <li style="float:right;"><a href="https://github.com/szabolevi98/NodeJS-Passport-Template" target="_blank">GitHub</a></li>
+</ul>
+

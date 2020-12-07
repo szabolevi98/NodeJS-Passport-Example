@@ -1,0 +1,10 @@
+<h1>Regisztráció</h1>
+<form action="/register" method="POST">
+  {{>avatar}}
+  <div class="container">
+    <input type="text" id="name" name="name" placeholder="Név..." required />
+    <input type="email" id="email" name="email" placeholder="Email..." required />
+    <input type="password" id="password" name="password" placeholder="Jelszó..." required />
+    <input type="submit" value="Regisztráció" />
+  </div>
+</form>
