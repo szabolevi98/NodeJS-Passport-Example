@@ -3,16 +3,8 @@ const express = require('express');
 const router = express();
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-
-//Passport config
-const initializePassport = require('./passport-config');
-initializePassport(
-  passport,
-  email => users.find(user => user.email === email),
-  id => users.find(user => user.id === id)
-);
-
-const users = []; //Change to MongoDB or something in a live usage
+const path = require('path');
+const User = require(path.join(__dirname, 'Models', 'User'));
 
 //Routes
 router.get('/', checkAuthenticated, (req, res) => {
@@ -43,22 +35,24 @@ router.route('/register')
   });
 })
 .post(checkNotAuthenticated, async (req, res) => {
+  const userObject = {
+    name: req.body.name,
+    email: req.body.email,
+    password: await bcrypt.hash(req.body.password, 10)
+  };
+  console.log(userObject);
   try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10)
-    users.push({
-      id: Date.now().toString(),
-      name: req.body.name,
-      email: req.body.email,
-      password: hashedPassword
-    })
-    console.log(users);
+    const postUser = new User(userObject);
+    console.log('ok...');
+    await postUser.save();
     res.render('login', {
       success: true,
       email: req.body.email,
       atLogin: true
     });
-  } catch {
-    res.redirect('/register');
+  } 
+  catch(err) {
+    res.send(err.message);
   }
 });
 

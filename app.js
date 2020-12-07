@@ -1,11 +1,13 @@
 //Dependencies
 const express = require('express');
 const app = express();
-const expHbs = require('express-handlebars')
-const passport = require('passport');
 const path = require('path');
+const expHbs = require('express-handlebars')
+const passport = require(path.join(__dirname, 'Passport', 'passport-config'));
 const flash = require('express-flash');
 const session = require('express-session');
+const MongoStore = require("connect-mongo")(session);
+const mongoose = require("mongoose");
 require('dotenv').config();
 
 //Handlebars
@@ -34,6 +36,7 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
+  store: new MongoStore({ mongooseConnection: mongoose.connection }),
   cookie: {
     maxAge: 365 * 24 * 60 * 60 * 1000 //1 year
   }
@@ -44,6 +47,12 @@ app.use(passport.session());
 //Routes (external)
 const routes = require('./routes');
 app.use('/', routes)
+
+//Connect to MongoDB
+mongoose.connect(process.env.DB_CONNECTION, 
+{ useNewUrlParser: true, useUnifiedTopology: true }, 
+() => console.log('Connecting to the database...')
+);
 
 //Server start
 const port = process.env.PORT || 5000;
