@@ -1,6 +1,7 @@
+//Dependencies
 const mongoose = require("mongoose");
 
-// Create Schema
+//Create schema
 const UserSchema = new mongoose.Schema(
     {
         name: {
