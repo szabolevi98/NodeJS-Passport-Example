@@ -6,6 +6,7 @@ router.get('/', checkAuthenticated, (req, res) => {
   res.render('index', { 
     name: req.user.name,
     email: req.user.email,
+    date: req.user.date,
     loggedIn: true
   });
 });

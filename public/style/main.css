@@ -19,6 +19,12 @@ footer {
   flex-grow: 1
 }
 
+.user {
+  width: min-content;
+  margin: auto;
+  text-align: left;
+}
+
 input[type=text], input[type=password], input[type=email], button {
   width: 100%;
   padding: 12px 20px;
