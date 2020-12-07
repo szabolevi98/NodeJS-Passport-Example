@@ -7,6 +7,6 @@ Live demo: https://nodejs-passport-template.herokuapp.com
 Make a file named ".env" in the root directory with
 ```
 DB_CONNECTION = putHereTheMongoDBConnectionString
-SESSION_SECRET = thisIsSecret
+SESSION_SECRET = putHereSomeSecretString
 ```
 inside or set the same `Config Vars` at Heroku's settings.
