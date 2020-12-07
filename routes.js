@@ -65,7 +65,7 @@ router.route('/register')
 router.get('/logout', (req, res) => {
   req.logOut();
   res.redirect('/login');
-})
+});
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {

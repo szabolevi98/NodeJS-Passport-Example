@@ -7,11 +7,11 @@ function initialize(passport, getUserByEmail, getUserById) {
     if (user == null) {
       return done(null, false, { message: 'no_user' });
     }
-
     try {
       if (await bcrypt.compare(password, user.password)) {
         return done(null, user);
-      } else {
+      } 
+      else {
         return done(null, false, { message: 'wrong_pw' });
       }
     } 

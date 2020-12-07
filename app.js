@@ -12,6 +12,7 @@ require('dotenv').config();
 const hbs = expHbs.create({
   defaultLayout: 'main',
   layoutsDir: path.join(__dirname, 'views', 'layouts'),
+  partialsDir: path.join(__dirname, 'views', 'partials'),
   extname: '.hbs',
   helpers: {
     ifEquals: function(arg1, arg2, options) {
@@ -32,7 +33,10 @@ app.use(flash());
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 365 * 24 * 60 * 60 * 1000 //1 year
+  }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
