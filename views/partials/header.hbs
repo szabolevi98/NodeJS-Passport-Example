@@ -6,7 +6,7 @@
   <a class="active" href="/register">Regisztráció</a>
   <a href="/login">Bejelentkezés</a>
 {{else}}
-  <a {{unless atError}}class="active" {{/unless}}href="/login">Bejelentkezés</a>
+  <a {{#unless atError}}class="active" {{/unless}}href="/login">Bejelentkezés</a>
   <a href="/register">Regisztráció</a>
 {{/if}}
   <a href="https://github.com/szabolevi98/NodeJS-Passport-Template" class="github" target="_blank">GitHub</a>
