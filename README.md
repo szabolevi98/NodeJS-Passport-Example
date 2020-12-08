@@ -3,6 +3,8 @@ Live demo: (Click to the image)
 
 [![Screenshot](screenshot.png?raw=true "Passport-Template")](https://nodejs-passport-template.herokuapp.com)
 
+Or: https://nodejs-passport-template.herokuapp.com
+
 - `npm install`
 - `npm run dev`
 
