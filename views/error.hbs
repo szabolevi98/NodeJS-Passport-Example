@@ -1,6 +1,7 @@
-{{#if errorMessage}}
-<h1>{{errorMessage}}</h1>
-{{else}}
-<h1>Hiba, az oldal nem található!</h1>
-{{/if}}
+<h1>{{title}}</h1>
 {{>avatar}}
+{{#if errorMessage}}
+<p>{{errorMessage}}</p>
+{{else}}
+<p>Az oldal: {{route}} nem található!</p>
+{{/if}}
