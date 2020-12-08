@@ -29,8 +29,8 @@ const hbs = expHbs.create({
 //App config
 app.engine("hbs", hbs.engine);
 app.set('view engine', "hbs");
-app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -50,7 +50,7 @@ app.use('/', routes)
 
 //Connect to MongoDB
 mongoose.connect(process.env.DB_CONNECTION, 
-{ useNewUrlParser: true, useUnifiedTopology: true }, 
+{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, 
 () => console.log('Connecting to the database...')
 );
 

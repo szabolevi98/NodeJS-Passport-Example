@@ -1,6 +1,8 @@
 # NodeJS-Passport-Template
 Live demo: https://nodejs-passport-template.herokuapp.com
 
+![Screenshot](screenshot.png?raw=true "Passport-Template")
+
 - `npm install`
 - `npm run dev`
 

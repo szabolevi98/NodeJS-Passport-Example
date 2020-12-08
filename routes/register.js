@@ -13,7 +13,7 @@ router.route('/')
     atRegister: true
   });
 })
-.post(check.checkNotAuthenticated, async (req, res) => {
+.post(check.checkNotAuthenticated, async(req, res) => {
   const userObject = {
     name: req.body.name,
     email: req.body.email,
@@ -22,7 +22,6 @@ router.route('/')
   console.log(userObject);
   try {
     const postUser = new User(userObject);
-    console.log('ok...');
     await postUser.save();
     res.render('login', {
       title: 'Bejelentkezés',

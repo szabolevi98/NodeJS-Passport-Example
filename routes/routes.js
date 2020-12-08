@@ -1,6 +1,5 @@
 //Dependencies
-const express = require('express');
-const router = express();
+const router = require('express').Router();
 
 //Routes
 router.use('/', require('./index'));
