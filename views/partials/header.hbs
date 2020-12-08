@@ -2,14 +2,12 @@
 {{#if loggedIn}}
   <a class="active" href="/">Felhasználó</a>
   <a href="/logout">Kijelentkezés</a>
-{{else}}
-{{#if atLogin}}
-  <a class="active" href="/login">Bejelentkezés</a>
-  <a href="/register">Regisztráció</a>
-{{else}}
+{{else if atRegister}}
   <a class="active" href="/register">Regisztráció</a>
   <a href="/login">Bejelentkezés</a>
-{{/if}}
+{{else}}
+  <a {{unless atError}}class="active" {{/unless}}href="/login">Bejelentkezés</a>
+  <a href="/register">Regisztráció</a>
 {{/if}}
   <a href="https://github.com/szabolevi98/NodeJS-Passport-Template" class="github" target="_blank">GitHub</a>
   <a href="javascript:void(0);" class="icon" onclick="responsive()"><i class="fa fa-bars"></i></a>
