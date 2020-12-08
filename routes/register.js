@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const path = require('path');
-const User = require(path.join(__dirname, '..', 'Models', 'User'));
+const userModel = require(path.join(__dirname, '..', 'models', 'user'));
 const check = require('./check');
 
 //Route register
@@ -21,7 +21,7 @@ router.route('/')
   };
   console.log(userObject);
   try {
-    const postUser = new User(userObject);
+    const postUser = new userModel(userObject);
     await postUser.save();
     res.render('login', {
       title: 'Bejelentkezés',
