@@ -33,6 +33,7 @@ router.route('/')
   catch(err) {
     res.render('error', {
       title: 'Hiba',
+      atError: true,
       errorMessage: err.message
     });
   }
