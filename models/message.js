@@ -4,13 +4,10 @@ const mongoose = require("mongoose");
 //Create schema
 const messageSchema = new mongoose.Schema(
     {
-        name: {
-            type: String,
+        senderId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
             required: true
-        },
-        email: {
-            type: String,
-            required: true,
         },
         subject: {
             type: String,

@@ -1,4 +1,15 @@
-html,body { height:100%; }
+:root {
+  --mainColor: #4CAF50;
+  --mainBgColor: #f8f8f8;
+  --secondColor: #333;
+  --secondColorHover: #111;
+  --inputBorderColor: #ccc;
+  --textColor: #ffffff;
+}
+
+html, body { 
+  height:100%; 
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -10,32 +21,41 @@ body {
 }
 
 .maincontainer {
-  border-top: 3px solid #4CAF50;
-  border-bottom: 3px solid #4CAF50;
-  background-color: #f8f8f8;
-  flex-grow: 1
+  background-color: var(--mainBgColor);
+  flex-grow: 1;
+  padding-top: 49px; /* 46px header + 3px border */
+  padding-bottom: 25px; /* 16px footer + 3px border + 6px extra */
 }
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--secondColor);
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 46px;
+  border-bottom: 3px solid var(--mainColor);
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: white;
+  color: var(--textColor);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .topnav a:hover:not(.active):not(.icon) {
-  background-color: #111;
+  background-color: var(--secondColorHover);
 }
 
 .topnav a.active {
-  background-color: #4CAF50;
+  background-color: var(--mainColor);
+}
+
+.topnav .active:hover, .icon:hover {
+  opacity: 0.9;
 }
 
 .topnav .icon {
@@ -58,7 +78,8 @@ body {
     float: left;
   }
   .topnav.responsive {
-    position: relative;
+    /* position: relative; */
+    height: min-content;
   }
   .topnav.responsive .icon {
     position: absolute;
@@ -87,8 +108,14 @@ img.avatar {
 }
 
 footer {
-  background-color: #333;
-  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height:16px;
+  background-color: var(--secondColor);
+  border-top: 3px solid var(--mainColor);
+  color: var(--textColor);
   text-align: center;
   padding: 3px;
   font-size: 14px;
@@ -99,15 +126,15 @@ input[type=text], input[type=password], input[type=email], textarea {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--inputBorderColor);
   box-sizing: border-box;
   outline: none;
 }
 
 input[type=submit], button {
   width: 100%;
-  background-color: #4CAF50;
-  color: white;
+  background-color: var(--mainColor);
+  color: var(--textColor);
   padding: 14px 20px;
   border: none;
   cursor: pointer;
@@ -116,4 +143,9 @@ input[type=submit], button {
 
 input[type=submit]:hover, button:hover {
   opacity: 0.8;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 41px;
 }

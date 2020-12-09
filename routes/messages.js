@@ -9,7 +9,7 @@ router.route('/')
 .get(auth.checkAuthenticated, async(req, res) => {
     res.render('messages', {
         title: 'Elküldött üzenetek',
-        messagesList: await messageModel.find({ email: req.user.email }).lean(),
+        messagesList: await messageModel.find({ senderId: req.user._id }).lean(),
         loggedIn: true,
         atMessages: true
     });
@@ -19,7 +19,7 @@ router.route('/')
         await messageModel.deleteOne({ _id: req.body._id });
         res.render('messages', {
             title: 'Elküldött üzenetek',
-            messagesList: await messageModel.find({ email: req.user.email }).lean(),
+            messagesList: await messageModel.find({ senderId: req.user._id }).lean(),
             loggedIn: true,
             atMessages: true,
             messageRemoved: true

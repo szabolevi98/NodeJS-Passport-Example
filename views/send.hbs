@@ -9,8 +9,7 @@
 {{else}}
 <form action="/send" method="post" id="sendForm">
     <div class="container">
-        <input type="hidden" id="name" name="name" value="{{name}}" />
-        <input type="hidden" id="email" name="email" value="{{email}}" />
+        <input type="hidden" id="senderId" name="senderId" value="{{senderId}}" />
         <input type="text" id="subject" name="subject" placeholder="Az üzenet tárgya..." maxlength="150" minlength="3" required />
         <textarea rows="4" cols="50" id="message" name="message" form="sendForm" placeholder="Írd be az üzenetet..." maxlength="500" minlength="3" required ></textarea>
         <input type="submit" value="Küldés" />

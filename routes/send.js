@@ -9,16 +9,14 @@ router.route('/')
 .get(auth.checkAuthenticated, (req, res) => {
     res.render('send', {
         title: 'Üzenetküldés',
-        name: req.user.name,
-        email: req.user.email,
+        senderId: req.user._id,
         loggedIn: true,
         atSend: true
     });
 })
 .post(auth.checkAuthenticated, async(req, res) => {
     const messageObject = {
-        name: req.body.name,
-        email: req.body.email,
+        senderId: req.body.senderId,
         subject: req.body.subject,
         message: req.body.message
       };
