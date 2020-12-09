@@ -3,10 +3,10 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const expHbs = require('express-handlebars')
-const passport = require(path.join(__dirname, 'passport', 'passport-config'));
+const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
-const MongoStore = require("connect-mongo")(session);
+const mongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
 require('dotenv').config();
 
@@ -26,17 +26,20 @@ const hbs = expHbs.create({
   }
 });
 
+//Passport Config
+require(path.join(__dirname, 'passport', 'passport-config'))(passport);;
+
 //App config
 app.engine("hbs", hbs.engine);
 app.set('view engine', "hbs");
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
-  store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  store: new mongoStore({ mongooseConnection: mongoose.connection }),
   cookie: {
     maxAge: 365 * 24 * 60 * 60 * 1000 //1 year
   }

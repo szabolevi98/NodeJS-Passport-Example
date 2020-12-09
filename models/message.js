@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 //Create schema
-const userSchema = new mongoose.Schema(
+const messageSchema = new mongoose.Schema(
     {
         name: {
             type: String,
@@ -11,9 +11,12 @@ const userSchema = new mongoose.Schema(
         email: {
             type: String,
             required: true,
-            unique: true
         },
-        password: {
+        subject: {
+            type: String,
+            required: true,
+        },
+        message: {
             type: String,
             required: true
         },
@@ -24,4 +27,4 @@ const userSchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("users", userSchema);
+module.exports = mongoose.model("messages", messageSchema);

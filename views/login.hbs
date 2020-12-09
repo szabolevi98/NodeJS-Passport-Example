@@ -1,4 +1,5 @@
 <h1>{{title}}</h1>
+{{>avatar}}
 {{#ifEquals messages.error "no_user" }}
 <p>A megadott email címmel nem található felhasználó!</p>
 {{/ifEquals}}
@@ -6,7 +7,6 @@
 <p>A megadott jelszó hibás!</p>
 {{/ifEquals}}
 <form action="/login" method="POST">
-  {{>avatar}}
   <div class="container">
     <input type="email" id="email" name="email"{{#if email}} value="{{email}}"{{/if}} placeholder="Email..." required />
     <input type="password" id="password" name="password" placeholder="Jelszó..." required />

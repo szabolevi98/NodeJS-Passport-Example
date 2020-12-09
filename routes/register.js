@@ -3,23 +3,22 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const path = require('path');
 const userModel = require(path.join(__dirname, '..', 'models', 'user'));
-const check = require('./check');
+const auth = require(path.join(__dirname, '..', 'passport', 'auth'));
 
 //Route register
 router.route('/')
-.get(check.checkNotAuthenticated, (req, res) => {
+.get(auth.checkNotAuthenticated, (req, res) => {
   res.render('register', {
     title: 'Regisztráció',
     atRegister: true
   });
 })
-.post(check.checkNotAuthenticated, async(req, res) => {
+.post(auth.checkNotAuthenticated, async(req, res) => {
   const userObject = {
     name: req.body.name,
     email: req.body.email,
     password: await bcrypt.hash(req.body.password, 10)
   };
-  console.log(userObject);
   try {
     const postUser = new userModel(userObject);
     await postUser.save();

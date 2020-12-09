@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+{{>avatar}}
+{{#if messagesList}}
+{{#each messagesList}}
+<div class="container" style="text-align:left;">
+    <form action="/messages" method="post" class="deleteForm">
+            <span>
+                <input type="hidden" value="{{this._id}}" name="_id" class="_id" />
+                <b>Tárgy:</b> {{this.subject}}<br />
+                <b>Üzenet:</b> {{this.message}}<br />
+                <i>{{this.date}}</i><br />
+                <input type="submit" value="Törlés" />
+            </span>
+    </form>
+</div>
+{{/each}}
+{{else}}
+<h4>Még nem küldtél üzenetet!</h4>
+{{/if}}
+{{#if messageRemoved}}
+<script src="/script/messages.js"></script>
+{{/if}}

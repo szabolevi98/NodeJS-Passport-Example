@@ -1,13 +1,12 @@
 <div class="topnav" id="myTopnav">
 {{#if loggedIn}}
-  <a class="active" href="/">Felhasználó</a>
+  <a {{#if atProfile}}class="active" {{/if}}href="/">Felhasználó</a>
+  <a {{#if atSend}}class="active" {{/if}}href="/send">Üzenetküldés</a>
+  <a {{#if atMessages}}class="active" {{/if}}href="/messages">Elküldött üzenetek</a>
   <a href="/logout">Kijelentkezés</a>
-{{else if atRegister}}
-  <a class="active" href="/register">Regisztráció</a>
-  <a href="/login">Bejelentkezés</a>
 {{else}}
-  <a {{#unless atError}}class="active" {{/unless}}href="/login">Bejelentkezés</a>
-  <a href="/register">Regisztráció</a>
+  <a {{#if atLogin}}class="active" {{/if}}href="/login">Bejelentkezés</a>
+  <a {{#if atRegister}}class="active" {{/if}}href="/register">Regisztráció</a>
 {{/if}}
   <a href="https://github.com/szabolevi98/NodeJS-Passport-Template" class="github" target="_blank">GitHub</a>
   <a href="javascript:void(0);" class="icon" onclick="responsive()"><i class="fa fa-bars"></i></a>

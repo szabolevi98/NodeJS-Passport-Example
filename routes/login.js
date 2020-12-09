@@ -1,17 +1,18 @@
 //Dependencies
 const router = require('express').Router();
 const passport = require('passport');
-const check = require('./check');
+const path = require('path');
+const auth = require(path.join(__dirname, '..', 'passport', 'auth'));
 
 //Route login
 router.route('/')
-.get(check.checkNotAuthenticated, (req, res) => {
+.get(auth.checkNotAuthenticated, (req, res) => {
   res.render('login', {
     title: 'Bejelentkezés',
     atLogin: true
   });
 })
-.post(check.checkNotAuthenticated, passport.authenticate('local', {
+.post(auth.checkNotAuthenticated, passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true
