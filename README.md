@@ -1,4 +1,5 @@
 # NodeJS-Passport-Example
+An express app with Passport and Mongoose.  
 Live demo: (Click to the image)
 
 [![Screenshot](screenshot.png?raw=true "Passport-Example")](https://nodejs-passport-example.herokuapp.com)
