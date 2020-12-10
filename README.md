@@ -1,4 +1,4 @@
-# NodeJS-Passport-Template
+# NodeJS-Passport-Example
 Live demo: (Click to the image)
 
 [![Screenshot](screenshot.png?raw=true "Passport-Template")](https://nodejs-passport-template.herokuapp.com)
