@@ -14,8 +14,7 @@ To get the Node server running:
 
 Content of .env:
 ```
-DB_CONNECTION = putHereTheMongoDBConnectionString
+DB_CONNECTION = putHereYourMongoDBConnectionString
 SESSION_SECRET = putHereSomeSecretString
 ```
-Or set the same `Config Vars` at Heroku's settings
-if you want to deploy to Heroku.
+Or set the same `Config Vars` at Heroku's settings if you deploy there.
