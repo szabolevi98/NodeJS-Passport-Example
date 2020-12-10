@@ -49,7 +49,7 @@ app.use(passport.session());
 
 //Routes (external)
 const routes = require(path.join(__dirname, 'routes', 'routes'));
-app.use('/', routes)
+app.use('/', routes);
 
 //Connect to MongoDB
 mongoose.connect(process.env.DB_CONNECTION, 
