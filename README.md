@@ -10,7 +10,6 @@ To get the Node server running:
 - Create a file named ".env" (content below)
 - `npm install` to install dependencies
 - `npm run dev` to start the app with nodemon
-- `npm run start` to start the app normally
 
 Content of .env:
 ```
