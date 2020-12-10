@@ -1,10 +1,10 @@
 # NodeJS-Passport-Example
 #### An Express app with Passport, Mongoose and Handlebars.
 
+Live demo: Click to the image or [here](https://nodejs-passport-example.herokuapp.com).
 [![Screenshot](screenshot.png?raw=true "Passport-Example")](https://nodejs-passport-example.herokuapp.com)
 
-Live demo: Click to the image or [here](https://nodejs-passport-example.herokuapp.com).
-
+To get the Node server running: 
 - Clone this repo to your machine
 - Register a MongoDB Atlas or use local MongoDB
 - `npm install` to install dependencies
