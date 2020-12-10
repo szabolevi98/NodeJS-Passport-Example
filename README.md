@@ -3,7 +3,7 @@
 
 [![Screenshot](screenshot.png?raw=true "Passport-Example")](https://nodejs-passport-example.herokuapp.com)
 
-Live demo: Click to the image or [here](ttps://nodejs-passport-example.herokuapp.com).
+Live demo: Click to the image or [here](https://nodejs-passport-example.herokuapp.com).
 
 - `npm install`
 - `npm run dev`
