@@ -1,17 +1,12 @@
 # NodeJS-Passport-Example
-#### An Express app with Passport, Mongoose and Handlebars.
 
 Live demo: Click to the image or [here](https://nodejs-passport-example.herokuapp.com).  
 [![Screenshot](screenshot.png?raw=true "Passport-Example")](https://nodejs-passport-example.herokuapp.com)
 
-To get the Node server running: 
-- Clone this repo to your machine
-- Register a MongoDB Atlas or use local MongoDB
-- Create a file named ".env" (content below)
 - `npm install` to install dependencies
-- `npm run dev` to start the app with nodemon
+- `npm run dev` to start the app
 
-Content of .env:
+Create a file named ".env" in the root directory with
 ```
 DB_CONNECTION = putHereYourMongoDBConnectionString
 SESSION_SECRET = putHereSomeSecretString
