@@ -11,4 +11,4 @@ Create a file named ".env" in the root directory with
 DB_CONNECTION = putHereYourMongoDBConnectionString
 SESSION_SECRET = putHereSomeSecretString
 ```
-Or set the same `Config Vars` at Heroku's settings if you deploy there.
+inside or set the same `Config Vars` at Heroku's settings.
