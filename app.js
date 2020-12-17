@@ -6,8 +6,8 @@ const expHbs = require('express-handlebars');
 const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
-const mongoStore = require("connect-mongo")(session);
-const mongoose = require("mongoose");
+const mongoStore = require('connect-mongo')(session);
+const mongoose = require('mongoose');
 require('dotenv').config();
 
 //Handlebars
@@ -30,8 +30,8 @@ const hbs = expHbs.create({
 require(path.join(__dirname, 'passport', 'passport-config'))(passport);;
 
 //App config
-app.engine("hbs", hbs.engine);
-app.set('view engine', "hbs");
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
@@ -53,8 +53,15 @@ app.use('/', routes);
 
 //Connect to MongoDB
 mongoose.connect(process.env.DB_CONNECTION, 
-{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, 
-() => console.log('Connecting to the database...')
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, 
+    (err) => {
+      if (err) {
+          console.log('Unable to connect to the database:', err.message);
+      }
+      else {
+          console.log('Connected to the database successfully!');
+      }
+    }
 );
 
 //Server start
