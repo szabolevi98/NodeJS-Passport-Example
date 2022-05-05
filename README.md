@@ -1,6 +1,6 @@
 # NodeJS-Passport-Example
 
-[![Screenshot](screenshot.png?raw=true "Passport-Example")]
+[Screenshot](screenshot.png?raw=true "Passport-Example")
 
 - `npm install` to install dependencies
 - `npm run dev` to start the app
