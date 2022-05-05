@@ -1,7 +1,6 @@
 # NodeJS-Passport-Example
 
-Live demo: Click to the image or [here](https://nodejs-passport-example.herokuapp.com).  
-[![Screenshot](screenshot.png?raw=true "Passport-Example")](https://nodejs-passport-example.herokuapp.com)
+[![Screenshot](screenshot.png?raw=true "Passport-Example")]
 
 - `npm install` to install dependencies
 - `npm run dev` to start the app
